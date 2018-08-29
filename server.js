@@ -15,8 +15,11 @@ app.use(bodyParser.json());
 //setting Handlebars
 const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({defaultLayout:"main"}));
-app.set("view","handlebars");
+//can we name "views" with any??
+app.set("view engine","handlebars");
+
+app.use(require('./controllers/burgers_controllers'));
+
 app.listen(PORT, function(){
     console.log("Server listening to PORT 3000");
 })
-

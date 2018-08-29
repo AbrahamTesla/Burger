@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="burgerImage">
+            <img src="assets/img/burger.jpeg", class="img-fluid"alt="burgerImage">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <h1>Eat The Burger App</h1>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="addBurger" placeholder="Type the name of the burger" aria-label="Type the name of the burger" aria-describedby="add">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="add">ADD</button>
+                        </div>
+                </div>       
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {{#each notDevouredBurgers}}
+            {{!-- {{#unless this.devoured}} --}}
+            <div class="container">
+                <div class="inputBurger">
+                    <span>{{this.id}}.{{this.burger_name}}</span>
+                </div>
+                    <button class="devoured" data-num="{{this.id}}">Devoured! It's Yummy</button>
+            </div>
+            {{!-- {{/unless}} --}}
+            {{/each}}
+        </div>
+
+        <div class="col">
+            {{#each devouredBurgers}}
+            {{!-- {{#if this.devoured}} --}}
+            <div class="container">
+                <div class="deletedBurger">
+                    <span>{{this.id}}.{{this.burger_name}}</span>
+                </div>
+            </div>
+            {{!-- {{/if}} --}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
