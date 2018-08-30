@@ -3,7 +3,7 @@ use burgers_db;
 
 CREATE TABLE burgers (
     id int AUTO_INCREMENT,
-    burger_name VARCHAR2(30) NOT NULL,
+    burger_name VARCHAR(30) NOT NULL,
     devoured BOOLEAN,
     PRIMARY KEY (id)
 );
